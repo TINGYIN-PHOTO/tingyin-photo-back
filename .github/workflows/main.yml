@@ -35,11 +35,11 @@ jobs:
         npm i -g hexo-cli # 安装hexo
         npm i
         # 拉取主题代码
-        # rm -rf themes/*
-        # git clone https://github.com/TINGYIN-PHOTO/hexo-theme-magnetic.git themes/magnetic
+        rm -rf themes/*
+        git clone https://github.com/TINGYIN-PHOTO/hexo-theme-magnetic.git themes/magnetic
         
   
     - name: Deploy
       run: |
         # publish
-        hexo clean && hexo generate && hexo deploy # 执行部署程序
+        hexo generate && hexo deploy # 执行部署程序
