@@ -52,7 +52,7 @@ jobs:
         vercel-token: ${{ secrets.VERCEL_TOKEN}}
         # 
         # if you want to comment on pr and commit, set token
-        github-token: ${{ secrets.OP_TOKEN }} # optional
+        github-token: ${{ secrets.OP_TOKEN}} # optional
         # if you want to create github deployment, set true, default: false
         github-deployment: false # optional, default is false
         # the working directory
