@@ -49,7 +49,7 @@ jobs:
       uses: amondnet/vercel-action@v19.0.1+3
       with:
         # Vercel token
-        vercel-token: ${{ secrets.VERCEL_TOKEN }}
+        vercel-token: ${{ secrets.VERCEL_TOKEN}}
         # 
         # if you want to comment on pr and commit, set token
         github-token: ${{ secrets.OP_TOKEN }} # optional

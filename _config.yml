@@ -104,5 +104,5 @@ theme: magnetic
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: git@github.com:TINGYIN-PHOTO/TINGYIN-PHOTO.github.io.git
+  repo: git@github.com:TINGYIN-PHOTO/tingyin-photo.github.io.git
   branch: master
