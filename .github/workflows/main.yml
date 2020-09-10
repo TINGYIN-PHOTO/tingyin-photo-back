@@ -1,6 +1,10 @@
 name: Deploy Blog
-
-on: [push] # 当有新push时运行
+on:
+  push:
+    branches:
+      - master # 代码提交的时候触发构建部署
+  schedule:
+    - cron: "0 5 * * *"  # 定时任务：每天下午14点钟触发
 
 env:
   TZ: Asia/Shanghai
@@ -49,16 +53,16 @@ jobs:
       uses: amondnet/vercel-action@v19.0.1+3
       with:
         # Vercel token
-        vercel-token: ${{secrets.VERCEL_TOKEN}}
+        vercel-token: ${{ secrets.VERCEL_TOKEN }}
         # 
         # if you want to comment on pr and commit, set token
-        github-token: ${{secrets.OP_TOKEN}} # optional
+        github-token: ${{ secrets.OP_TOKEN }} # optional
         # if you want to create github deployment, set true, default: false
         github-deployment: false # optional, default is false
         # the working directory
         working-directory: ./ # optional
         # Vercel CLI 17+, ❗️  The `name` property in vercel.json is deprecated (https://zeit.ink/5F)
-        vercel-project-id: ${{secrets.PROJECT_ID}} # optional
+        vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID}} # optional
         # Vercel CLI 17+, ❗️  The `name` property in vercel.json is deprecated (https://zeit.ink/5F)
-        vercel-org-id: ${{secrets.ORG_ID}} # optional
+        vercel-org-id: ${{ secrets.VERCEL_ORG_ID}} # optional
         vercel-args: '--prod'
